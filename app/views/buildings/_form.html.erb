@@ -1,0 +1,47 @@
+<%= form_with(model: building, local: true) do |form| %>
+  <% if building.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(building.errors.count, "error") %> prohibited this building from being saved:</h2>
+
+      <ul>
+        <% building.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ime %>
+    <%= form.text_field :ime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zvezdice %>
+    <%= form.number_field :zvezdice %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opis %>
+    <%= form.text_area :opis %>
+  </div>
+
+  <div class="field">
+    <%= form.label :naslov %>
+    <%= form.text_field :naslov %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kraj %>
+    <%= form.text_field :kraj %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tip %>
+    <%= form.text_field :tip %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
