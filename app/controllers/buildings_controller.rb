@@ -25,6 +25,7 @@ class BuildingsController < ApplicationController
   # POST /buildings.json
   def create
     @building = Building.new(building_params)
+    @building.user_id = current_user.id
 
     respond_to do |format|
       if @building.save

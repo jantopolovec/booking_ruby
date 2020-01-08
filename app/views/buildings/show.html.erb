@@ -29,6 +29,9 @@
   <strong>Tip:</strong>
   <%= @building.tip %>
 </p>
-
+<p>
+  <strong>Napisal:</strong>
+  <%= @building.user.email %>
+</p>
 <%= link_to 'Edit', edit_building_path(@building) %> |
 <%= link_to 'Back', buildings_path %>

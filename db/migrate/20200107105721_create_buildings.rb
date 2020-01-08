@@ -7,7 +7,6 @@ class CreateBuildings < ActiveRecord::Migration[6.0]
       t.string :naslov
       t.string :kraj
       t.string :tip
-
       t.timestamps
     end
   end
