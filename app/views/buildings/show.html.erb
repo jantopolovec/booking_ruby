@@ -1,4 +1,27 @@
-<p id="notice"><%= notice %></p>
+<script>
+var slideIndex = [1,1];
+var slideId = ["mySlides1", "mySlides2"]
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex[no]-1].style.display = "block";  
+}
+</script>
+
+<br>
+
 
 <p>
   <strong>Ime:</strong>
@@ -33,5 +56,41 @@
   <strong>Napisal:</strong>
   <%= @building.user.email %>
 </p>
-<%= link_to 'Edit', edit_building_path(@building) %> |
+
+<div class="slideshow-container">
+<% if @building.image.attached? %>
+  <%y=1%>
+  <% @building.image.each do |image| %>
+    <%if y==1%>
+      <div class="mySlides1" style="display: block;">
+        <%= image_tag(image, :className => "", :style => "width:100%") %> 
+      </div>
+    <% end %>
+
+    <%if y==2%>
+      <div class="mySlides1" style="display: none;">
+        <%= image_tag(image, :className => "", :style => "width:100%") %> 
+      </div>
+    <% end %>
+    <%y=2%>
+    
+  <% end %>
+<% end %>
+
+<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+<a class="next" onclick="plusSlides(1, 0)" >&#10095;</a>
+
+</div>
+<% if defined?(current_user.id) %>
+<%if current_user.id == @building.user_id %>
+<%= link_to 'Edit', edit_building_path(@building) %>
+<%= link_to 'Destroy', @building, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %> 
+<% end %>
+|
 <%= link_to 'Back', buildings_path %>
+
+
+
+
+

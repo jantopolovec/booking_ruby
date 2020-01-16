@@ -26,6 +26,8 @@ class BuildingsController < ApplicationController
   def create
     @building = Building.new(building_params)
     @building.user_id = current_user.id
+    #@building.image.attach(params[:building][:image])
+    @image = params[:building][:image] if params[:building][:image].present?
 
     respond_to do |format|
       if @building.save
@@ -70,6 +72,6 @@ class BuildingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def building_params
-      params.require(:building).permit(:ime, :zvezdice, :opis, :naslov, :kraj, :tip)
+      params.require(:building).permit(:ime, :zvezdice, :opis, :naslov, :kraj, :tip, image: [])
     end
 end

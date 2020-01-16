@@ -23,25 +23,29 @@
   <div class="field">
     
     <div class="ocena">
-      Ocena:
+      Ocena &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <span class="starRating" > 
-        <%= form.radio_button :zvezdice, '5', :id => 'rating5'  %>  </td>
+        <%= form.radio_button :zvezdice, '5', :id => 'rating5'  %>  
         <label for="rating5">5</label>
-        <%= form.radio_button :zvezdice, '4', :id => 'rating4' %>  </td>
+        <%= form.radio_button :zvezdice, '4', :id => 'rating4' %>  
         <label for="rating4">4</label>
-        <%= form.radio_button :zvezdice, '3', :id => 'rating3', :checked => true %>  </td>
+        <%= form.radio_button :zvezdice, '3', :id => 'rating3', :checked => true %> 
         <label for="rating3">3</label>
-        <%= form.radio_button :zvezdice, '2' , :id => 'rating2' %>  </td>
+        <%= form.radio_button :zvezdice, '2' , :id => 'rating2' %>  
         <label for="rating2">2</label>
-        <%= form.radio_button :zvezdice, '1', :id => 'rating1'  %>  </td>
+        <%= form.radio_button :zvezdice, '1', :id => 'rating1'  %>  
         <label for="rating1">1</label>
       </span>
        </div>
   </div>
-  
-  <div class="field">
-    <%= form.label :opis %>
-    <%= form.text_area :opis %>
+ 
+
+<div class="form-group row ">
+    <%= form.label :opis , class: "col-md-4 col-form-label text-md-right"%>
+    <div class="col-md-6">
+    <%= form.text_area :opis, :id => "rating1" , cols: "50", rows: "5",:class => 'form-control' %>
+  </div>
   </div>
 
   
@@ -70,7 +74,18 @@
                   </div>
                 </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+ <div class="form-group row">
+    <%= form.label :slike , class: "col-md-4 col-form-label text-md-right"%>
+    <div class="col-md-6">
+  <%= form.file_field :image, multiple:true%>
+ </div>
+ </div>
+ 
+<div class="form-group row">
+    <%= form.label :tip, 'Tip stavbe:', class: "col-md-4 col-form-label text-md-right" %>          
+    <div class="col-md-6">
+    <%= form.submit 'Dodaj', :class => 'btn btn-dark btn-lg form-control' %>
+  </div></div>
+
+
+<% end%>
