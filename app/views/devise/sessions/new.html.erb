@@ -8,12 +8,17 @@
 <div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-			
+		
 <h2 class="text-white">Prijava</h2>
 <div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
+<span>
+          <%- if devise_mapping.omniauthable? %>
+            <%- resource_class.omniauth_providers.each do |provider| %>
+              <%= link_to "", omniauth_authorize_path(resource_name, provider), class: 'fab fa-facebook-square ' %><br />
+            <% end %>
+          <% end %>	
+</span>
 					<span><i class="fab fa-google-plus-square"></i></span>
-					<span><i class="fab fa-twitter-square"></i></span>
 				</div>
 			</div>
 <div class="card-body">
@@ -43,6 +48,7 @@
     </div>
   <% end %>
   </div><br/>
+  
   <div class="form-group">
   
     <%= f.submit "Prijava" , :class => 'button'%>

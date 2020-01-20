@@ -42,3 +42,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
     # add_index :users, :unlock_token,         unique: true
   end
 end
+
+# ActiveRecord::Migration
+def change
+  add_column :users, google_token, :string
+  add_column :users, google_refresh_token, :string
+end
