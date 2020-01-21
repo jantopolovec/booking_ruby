@@ -35,7 +35,6 @@ gem 'omniauth-facebook'
 
 #google login
 gem 'omniauth-google-oauth2'
-gem 'google-api-client', require: 'google/apis/calendar_v3'
 
 
 # Reduces boot times through caching; required in config/boot.rb

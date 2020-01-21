@@ -1,0 +1,97 @@
+<%= form_with(model: room, local: true) do |form| %>
+  <% if room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+        <% room.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :building_id %>
+    <%= form.number_field :building_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tip %>
+    <%= form.text_field :tip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stevilka %>
+    <%= form.number_field :stevilka %>
+  </div>
+
+  <div class="field">
+    <%= form.label :klima %>
+    <%= form.number_field :klima %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wifi %>
+    <%= form.text_field :wifi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :invalidi %>
+    <%= form.number_field :invalidi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zivali %>
+    <%= form.number_field :zivali %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fitnes %>
+    <%= form.number_field :fitnes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kajenje %>
+    <%= form.number_field :kajenje %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postrezba %>
+    <%= form.number_field :postrezba %>
+  </div>
+
+  <div class="field">
+    <%= form.label :restavracija %>
+    <%= form.number_field :restavracija %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bar %>
+    <%= form.number_field :bar %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recepcija %>
+    <%= form.number_field :recepcija %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bazen %>
+    <%= form.number_field :bazen %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dvigalo %>
+    <%= form.number_field :dvigalo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cena %>
+    <%= form.text_field :cena %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

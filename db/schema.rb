@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_16_145532) do
+ActiveRecord::Schema.define(version: 2020_01_21_182208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,8 +45,29 @@ ActiveRecord::Schema.define(version: 2020_01_16_145532) do
     t.string "tip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_buildings_on_user_id"
+    t.integer "user_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "building_id"
+    t.string "tip"
+    t.integer "stevilka"
+    t.integer "klima"
+    t.integer "balkon"
+    t.integer "wifi"
+    t.integer "invalidi"
+    t.integer "zivali"
+    t.integer "fitnes"
+    t.integer "kajenje"
+    t.integer "postrezba"
+    t.integer "restavracija"
+    t.integer "bar"
+    t.integer "recepcija"
+    t.integer "bazen"
+    t.integer "dvigalo"
+    t.integer "cena"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,5 +87,4 @@ ActiveRecord::Schema.define(version: 2020_01_16_145532) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "buildings", "users"
 end
