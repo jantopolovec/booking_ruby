@@ -4,7 +4,12 @@ class BuildingsController < ApplicationController
   # GET /buildings
   # GET /buildings.json
   def index
-    @buildings = Building.all
+    
+    if params[:search]
+      @buildings= Building.search(params[:search]).order("created_at DESC")
+    else
+      @buildings =  Building.all.order('created_at DESC')
+    end
   end
 
   # GET /buildings/1
