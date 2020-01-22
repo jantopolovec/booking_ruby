@@ -16,77 +16,210 @@
     <%= form.number_field :building_id %>
   </div>
 
-  <div class="field">
-    <%= form.label :tip %>
-    <%= form.text_field :tip %>
+ 
+
+
+  <div class="form-check-row">
+  <div class="form-check-inline">
+    <%= form.label :tip, 'Tip:', class: "" %>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :tip, '1', :checked => true, class:"form-check-input" %>Da </label>
   </div>
 
-  <div class="field">
-    <%= form.label :stevilka %>
-    <%= form.number_field :stevilka %>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :tip, '0', class:"form-check-input" %> Ne </label>
+  </div>
+</div>
+  
+
+
+  <div class="form-check-row">
+  <div class="form-check-inline">
+    <%= form.label :stevilka, 'Številka:', class: "" %>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :stevilka, '1', :checked => true, class:"form-check-input" %>Da </label>
   </div>
 
-  <div class="field">
-    <%= form.label :klima %>
-    <%= form.number_field :klima %>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :stevilka, '0', class:"form-check-input" %> Ne </label>
+  </div>
+</div>
+ 
+
+
+  <div class="form-check-row">
+  <div class="form-check-inline">
+    <%= form.label :klima, 'Klima:', class: "" %>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :klima, '1', :checked => true, class:"form-check-input" %>Da </label>
   </div>
 
-  <div class="field">
-    <%= form.label :wifi %>
-    <%= form.text_field :wifi %>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :klima, '0', class:"form-check-input" %> Ne </label>
+  </div>
+</div>
+ 
+
+
+  <div class="form-check-row">
+  <div class="form-check-inline">
+    <%= form.label :wifi, 'Wifi:', class: "" %>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :wifi, '1', :checked => true, class:"form-check-input" %>Da </label>
   </div>
 
-  <div class="field">
-    <%= form.label :invalidi %>
-    <%= form.number_field :invalidi %>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :wifi, '0', class:"form-check-input" %> Ne </label>
+  </div>
+</div>
+ 
+
+  <div class="form-check-row">
+  <div class="form-check-inline">
+    <%= form.label :invalidi, 'Invalidi:', class: "" %>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :invalidi, '1', :checked => true, class:"form-check-input" %>Da </label>
   </div>
 
-  <div class="field">
-    <%= form.label :zivali %>
-    <%= form.number_field :zivali %>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :invalidi, '0', class:"form-check-input" %> Ne </label>
+  </div>
+</div>
+  
+
+
+  <div class="form-check-row">
+  <div class="form-check-inline">
+    <%= form.label :zivali, 'Živali:', class: "" %>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :zivali, '1', :checked => true, class:"form-check-input" %>Da </label>
   </div>
 
-  <div class="field">
-    <%= form.label :fitnes %>
-    <%= form.number_field :fitnes %>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :zivali, '0', class:"form-check-input" %> Ne </label>
+  </div>
+</div>
+
+
+
+  <div class="form-check-row">
+  <div class="form-check-inline">
+    <%= form.label :fitnes, 'Fitnes:', class: "" %>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :fitnes, '1', :checked => true, class:"form-check-input" %>Da </label>
   </div>
 
-  <div class="field">
-    <%= form.label :kajenje %>
-    <%= form.number_field :kajenje %>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :fitnes, '0', class:"form-check-input" %> Ne </label>
+  </div>
+</div>
+  
+  
+
+  <div class="form-check-row">
+  <div class="form-check-inline">
+    <%= form.label :kajenje, 'Kajenje:', class: "" %>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :kajenje, '1', :checked => true, class:"form-check-input" %>Da </label>
   </div>
 
-  <div class="field">
-    <%= form.label :postrezba %>
-    <%= form.number_field :postrezba %>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :kajenje, '0', class:"form-check-input" %> Ne </label>
+  </div>
+</div>
+  
+
+  <div class="form-check-row">
+  <div class="form-check-inline">
+    <%= form.label :postrezba, 'Postrezba:', class: "" %>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :postrezba, '1', :checked => true, class:"form-check-input" %>Da </label>
   </div>
 
-  <div class="field">
-    <%= form.label :restavracija %>
-    <%= form.number_field :restavracija %>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :postrezba, '0', class:"form-check-input" %> Ne </label>
+  </div>
+</div>
+
+  <div class="form-check-row">
+  <div class="form-check-inline">
+    <%= form.label :restavracija, 'Restavracija:', class: "" %>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :restavracija, '1', :checked => true, class:"form-check-input" %>Da </label>
   </div>
 
-  <div class="field">
-    <%= form.label :bar %>
-    <%= form.number_field :bar %>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :restavracija, '0', class:"form-check-input" %> Ne </label>
+  </div>
+</div>
+
+
+  <div class="form-check-row">
+  <div class="form-check-inline">
+    <%= form.label :bar, 'Bar:', class: "" %>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :bar, '1', :checked => true, class:"form-check-input" %>Da </label>
   </div>
 
-  <div class="field">
-    <%= form.label :recepcija %>
-    <%= form.number_field :recepcija %>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :bar, '0', class:"form-check-input" %> Ne </label>
+  </div>
+</div>
+ 
+
+  <div class="form-check-row">
+  <div class="form-check-inline">
+    <%= form.label :recepcija, 'Recepcija:', class: "" %>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :recepcija, '1', :checked => true, class:"form-check-input" %>Da </label>
   </div>
 
-  <div class="field">
-    <%= form.label :bazen %>
-    <%= form.number_field :bazen %>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :recepcija, '0', class:"form-check-input" %> Ne </label>
+  </div>
+</div>
+
+
+  <div class="form-check-row">
+  <div class="form-check-inline">
+    <%= form.label :bazen, 'Bazen:', class: "" %>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :bazen, '1', :checked => true, class:"form-check-input" %>Da </label>
   </div>
 
-  <div class="field">
-    <%= form.label :dvigalo %>
-    <%= form.number_field :dvigalo %>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :bazen, '0', class:"form-check-input" %> Ne </label>
+  </div>
+</div>
+
+  
+<div class="form-check-row">
+  <div class="form-check-inline">
+    <%= form.label :dvigalo, 'Dvigalo:', class: "" %>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :dvigalo, '1', :checked => true, class:"form-check-input" %>Da </label>
   </div>
 
-  <div class="field">
+  <div class="form-check-inline">
+    <label class="form-check-label">  <%= form.radio_button :dvigalo, '0', class:"form-check-input" %> Ne </label>
+  </div>
+</div>
+
+<div class="field">
     <%= form.label :cena %>
     <%= form.text_field :cena %>
   </div>

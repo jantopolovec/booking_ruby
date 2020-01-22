@@ -15,6 +15,9 @@ class BuildingsController < ApplicationController
   # GET /buildings/1
   # GET /buildings/1.json
   def show
+   # @rooms = Room.where(building_id: id)
+   
+    @rooms = Room.where(building_id: @building.id) 
   end
 
   # GET /buildings/new
