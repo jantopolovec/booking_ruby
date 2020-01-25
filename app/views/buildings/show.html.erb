@@ -136,7 +136,9 @@ function showSlides(n, no) {
         <td><%= room.bazen %></td>
         <td><%= room.dvigalo %></td>
         <td><%= room.cena %></td>
-       <td> <a href=""> Rezervacija </a></td>
+        <% if defined?(current_user.id) %>
+       <td> <%= link_to 'Razervacija', new_reservation_path(:id => room.id)   %></td>
+       <% end %>
         <% if defined?(current_user.id) %>
          <%if current_user.id == @building.user_id %>
         <td><%= link_to 'Show', room %></td>
@@ -149,9 +151,11 @@ function showSlides(n, no) {
 </table>
 
 <br>
+
 <% if defined?(current_user.id) %>
 <%if current_user.id == @building.user_id %>
-<%= link_to 'New Room', new_room_path %>
+
+<%= link_to "New Room", new_room_path(:id => @building.id) %>
 
 <% end %>
 <% end %>

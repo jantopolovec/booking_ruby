@@ -23,12 +23,13 @@
      
      
       <% if user_signed_in? %>
+      <%= link_to('Rezervacije',  reservations_path, class: 'nav-item nav-link') %>
       <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'nav-item nav-link') %>
     <% else %>
     <%= link_to "Login", new_user_session_path, class:'nav-item nav-link' %>
     <% end %>
 
-      <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      
       <span class="right form-inline my-2 my-lg-0">
       <%= form_tag(buildings_path, :method => "get", class:"form-inline") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Search Buildings", class:"form-control mr-sm-2" %>
