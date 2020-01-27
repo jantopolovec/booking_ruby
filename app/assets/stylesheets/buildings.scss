@@ -122,17 +122,24 @@ img {vertical-align: middle;}
 }
 tr
 {
+
   text-align: center;
   border-bottom: 1pt solid rgb(191, 185, 188);
   border-top: 1pt solid rgb(191, 185, 188);
-  
+  text-decoration: none!important;
 }
-
+th{
+  background-color: white!important;
+  text-align: center!important;
+}
 .stavba:hover
 {
   background-color: rgb(234, 232, 233);
  
  
+}
+td{
+  vertical-align: baseline!important;
 }
 .link
 {
@@ -149,6 +156,9 @@ a:hover {
 }
 .link:hover{
   color:gray!important;
+  text-decoration: none!important;
+}
+a{
   text-decoration: none!important;
 }
 
@@ -179,6 +189,7 @@ p.simar
   text-align: right!important;
   margin-top: -50px!important;
   margin-right: 20px!important;
+  text-decoration: none!important;
 }
 
 .srv
@@ -214,4 +225,5 @@ p.opis
   background-color: rgb(234, 232, 233);
  
 }
+
 

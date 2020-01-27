@@ -36,6 +36,9 @@ gem 'omniauth-facebook'
 #google login
 gem 'omniauth-google-oauth2'
 
+# active admin
+gem 'activeadmin'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
