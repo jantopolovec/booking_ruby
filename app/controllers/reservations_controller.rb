@@ -5,6 +5,14 @@ class ReservationsController < ApplicationController
   # GET /reservations.json
   def index
     @reservations = Reservation.where(user_id: current_user.id) 
+   @buildings = Building.all
+   @rooms = Room.all
+  end
+
+  def rezervacije
+    @reservations = Reservation.all 
+   @buildings = Building.all
+   @rooms = Room.all
   end
 
   # GET /reservations/1
@@ -28,10 +36,9 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user.id
-    
     respond_to do |format|
       if @reservation.save
-        format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
+        format.html { redirect_to reservations_path, notice: 'Reservation was successfully created.' }
         format.json { render :show, status: :created, location: @reservation }
       else
         format.html { render :new }

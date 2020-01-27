@@ -12,6 +12,10 @@ class BuildingsController < ApplicationController
     end
   end
 
+  def mybuildings
+    @buildings = Building.where(user_id: current_user.id) 
+  end
+
   # GET /buildings/1
   # GET /buildings/1.json
   def show

@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.number_field :building_id, value: params[:id], style: 'display:none' %>
+    <%= form.number_field :building_id, value: params[:build], style: 'display:none' %>
   </div>
 
  
@@ -21,32 +21,27 @@
 
   <div class="form-check-row">
   <div class="form-check-inline">
-    <%= form.label :tip, 'Tip:', class: "" %>
+    <%= form.label :tip, 'Tip:', class: "field" , style: 'display:none'%>
   </div>
   <div class="form-check-inline">
-    <label class="form-check-label">  <%= form.radio_button :tip, 'ka', :checked => true, class:"form-check-input" %>Da </label>
+    <label class="form-check-label">  <%= form.radio_button :tip, 'ka', :checked => true, class:"form-check-input", style: 'display:none' %> </label>
   </div>
 
   <div class="form-check-inline">
-    <label class="form-check-label">  <%= form.radio_button :tip, 'a', class:"form-check-input" %> Ne </label>
+    <label class="form-check-label">  <%= form.radio_button :tip, 'a', class:"form-check-input", style: 'display:none' %>  </label>
   </div>
 </div>
 
 
 
 
-  <div class="form-check-row">
-  <div class="form-check-inline">
-    <%= form.label :stevilka, 'Številka:', class: "" %>
-  </div>
-  <div class="form-check-inline">
-    <label class="form-check-label">  <%= form.radio_button :stevilka, '1', :checked => true, class:"form-check-input" %>Da </label>
-  </div>
 
-  <div class="form-check-inline">
-    <label class="form-check-label">  <%= form.radio_button :stevilka, '0', class:"form-check-input" %> Ne </label>
+  <div class="field">
+    <%= form.label :Številka , class: ""%>
+    
+    <%= form.number_field :stevilka, :class => '' %>
+    
   </div>
-</div>
  
 
 
@@ -225,8 +220,10 @@
     <%= form.text_field :cena %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <div class="form-group row">
+  
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<div class="">
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<%= form.submit 'Dodaj', :class => 'btn btn-dark btn-lg form-control' %>
+</div></div>
  
 <% end %>

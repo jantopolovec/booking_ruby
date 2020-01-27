@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :buildings
   
   root to:'buildings#index'
- 
+
+  get 'rezervacije' => 'reservations#rezervacije', as: :rezervacije
+  get 'mybuildings' => 'buildings#mybuildings', as: :mybuildings
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get 'auth/:provider/callback', to: 'sessions#googleAuth'
   get 'auth/failure', to: redirect('/')
