@@ -86,4 +86,8 @@ class BuildingsController < ApplicationController
     def building_params
       params.require(:building).permit(:ime, :zvezdice, :opis, :naslov, :kraj, :tip, image: [])
     end
+
+   
 end
+
+ 

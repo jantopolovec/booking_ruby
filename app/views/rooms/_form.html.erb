@@ -39,7 +39,7 @@
   <div class="field">
     <%= form.label :Številka , class: ""%>
     
-    <%= form.number_field :stevilka, :class => '' %>
+    <%= form.number_field :stevilka, :class => '' , :required => true %>
     
   </div>
  
@@ -217,7 +217,7 @@
 
 <div class="field">
     <%= form.label :cena %>
-    <%= form.text_field :cena %>
+    <%= form.text_field :cena , :required => true%>
   </div>
 
   <div class="form-group row">

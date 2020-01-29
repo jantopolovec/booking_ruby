@@ -16,14 +16,14 @@
 <div class="form-group row">
     <%= form.label :od , :class => 'col-2 col-form-label'%>
     <div class="col-10">
-    <%= form.date_field :od , min: Date.today+1, :class => 'form-control' %>
+    <%= form.date_field :od , min: Date.today+1, :class => 'form-control' , :required => true%>
     </div>
   </div>
 
   <div class="form-group row">
     <%= form.label :do , :class => 'col-2 col-form-label'%>
     <div class="col-10">
-    <%= form.date_field :do , min: Date.today+1, :class => 'form-control' %>
+    <%= form.date_field :do , min: Date.today+1, :class => 'form-control' , :required => true%>
     </div>
   </div>
 
@@ -34,7 +34,7 @@
   <div class="form-group row">
   <%= form.label :osebe , class: "col-2 col-form-label"%>
   <div class="col-10">
-  <%= form.number_field :osebe, :class => 'form-control' %>
+  <%= form.number_field :osebe, :class => 'form-control' , :required => true, :max => 10,:min => 1%>
   </div>
 </div>
 

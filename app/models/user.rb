@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   
- has_many :posts
+ has_many :buildings
 
  def self.new_with_session(params, session)
   super.tap do |user|

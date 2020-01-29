@@ -71,7 +71,8 @@ ActiveRecord::Schema.define(version: 2020_01_27_175137) do
     t.string "tip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_buildings_on_user_id"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -124,4 +125,5 @@ ActiveRecord::Schema.define(version: 2020_01_27_175137) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "buildings", "users"
 end

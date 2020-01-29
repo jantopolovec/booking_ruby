@@ -16,7 +16,7 @@
   <div class="form-group row">
   <%= form.label :ime , class: "col-md-4 col-form-label text-md-right"%>
   <div class="col-md-6">
-  <%= form.text_field :ime, :class => 'form-control' %>
+  <%= form.text_field :ime, :class => 'form-control' , :required => true%>
   </div>
 </div>
 
@@ -44,7 +44,7 @@
 <div class="form-group row ">
     <%= form.label :opis , class: "col-md-4 col-form-label text-md-right"%>
     <div class="col-md-6">
-    <%= form.text_area :opis, :id => "rating1" , cols: "50", rows: "5",:class => 'form-control' %>
+    <%= form.text_area :opis, :id => "rating1" , cols: "50", rows: "5",:class => 'form-control' , :required => true%>
   </div>
   </div>
 
@@ -53,7 +53,7 @@
   <div class="form-group row">
     <%= form.label :naslov , class: "col-md-4 col-form-label text-md-right"%>
     <div class="col-md-6">
-    <%= form.text_field :naslov, :class => 'form-control' %>
+    <%= form.text_field :naslov, :class => 'form-control', :required => true %>
     </div>
   </div>
 
@@ -61,7 +61,7 @@
 <div class="form-group row">
                   <%= form.label :kraj, 'Kraj:', class: "col-md-4 col-form-label text-md-right" %>
                   <div class="col-md-6">
-                    <%= form.select(:kraj, ['Ajdovščina', 'Bled', 'Brežice', 'Celje', 'Cerknica', 'Črnomelj', 'Domžale', 'Dravograd', 'Gornja Radgona', 'Grosuplje', 'Hrastnik', 'Idrija', 'Ilirska Bistrica', 'Izola', 'Jesenice', 'Kamnik', 'Kočevje', 'Koper', 'Kranj', 'Krško', 'Laško', 'Lendava', 'Litija', 'Ljubljana', 'Ljutomer', 'Logatec', 'Maribor', 'Medvode', 'Mengeš', 'Metlika', 'Mežica', 'Murska Sobota', 'Nova Gorica', 'Novo mesto', 'Piran', 'Postojna', 'Prevalje', 'Ptuj', 'Radovljica', 'Ravne na Koroškem', 'Ribnica', 'Rogaška Slatina', 'Sežana', 'Slovenj Gradec', 'Šentjur', 'Tolmin', 'Tržič', 'Velenje', 'Žalec', 'Železniki', 'Žiri'], {}, { :class => 'form-control'}) %>
+                    <%= form.select(:kraj, ['Ajdovščina','Arja vas', 'Bled', 'Brežice','Bohinj', 'Celje', 'Cerknica', 'Črnomelj', 'Domžale', 'Dravograd', 'Gornja Radgona', 'Grosuplje', 'Hrastnik', 'Idrija', 'Ilirska Bistrica', 'Izola', 'Jesenice', 'Kamnik', 'Kočevje', 'Koper', 'Kranj', 'Krško', 'Laško', 'Lendava', 'Litija', 'Ljubljana', 'Ljutomer', 'Logatec', 'Maribor', 'Medvode', 'Mengeš', 'Metlika', 'Mežica', 'Murska Sobota', 'Nova Gorica', 'Novo mesto', 'Piran', 'Postojna', 'Prevalje', 'Ptuj', 'Radovljica', 'Ravne na Koroškem', 'Ribnica', 'Rogaška Slatina', 'Sežana', 'Slovenj Gradec', 'Šentjur', 'Tolmin', 'Tržič', 'Velenje', 'Žalec', 'Železniki', 'Žiri'], {}, { :class => 'form-control'}) %>
                   </div>
                 </div>
 
@@ -77,7 +77,7 @@
  <div class="form-group row">
     <%= form.label :slike , class: "col-md-4 col-form-label text-md-right"%>
     <div class="col-md-6">
-  <%= form.file_field :image, multiple:true%>
+  <%= form.file_field :image, multiple:true , :required => true%>
  </div>
  </div>
  
