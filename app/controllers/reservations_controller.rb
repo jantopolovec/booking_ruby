@@ -34,15 +34,46 @@ class ReservationsController < ApplicationController
   # POST /reservations
   # POST /reservations.json
   def create
+    @count = 0
     @reservation = Reservation.new(reservation_params)
+    @test = Reservation.where("room_id = ?", @reservation.room_id)
     @reservation.user_id = current_user.id
-    respond_to do |format|
-      if @reservation.save
-        format.html { redirect_to reservations_path, notice: 'Reservation was successfully created.' }
-        format.json { render :show, status: :created, location: @reservation }
+    if @reservation.do > @reservation.od
+      @test.each do |t|
+        @date1 = @reservation.od
+        @date2 = @reservation.do
+      
+        while @date1 < @date2 
+          if   (t.od .. t.do).include?(@date1)
+            @count= @count+1
+        elsif (t.od .. t.do).include?(@date2)
+          @count= @count+1
+        end
+        @date1 = @date1+1.day
+        print @date1
+        end
+        
+      end
+      if @count<1
+        respond_to do |format|
+          if @reservation.save
+            format.html { redirect_to reservations_path, notice: 'Rezervacija je uspela.' }
+            format.json { render :show, status: :created, location: @reservation }
+          else
+            format.html { render :new }
+            format.json { render json: @reservation.errors, status: :unprocessable_entity }
+          end
+        end
       else
-        format.html { render :new }
-        format.json { render json: @reservation.errors, status: :unprocessable_entity }
+        respond_to do |format|
+        format.html { redirect_to reservations_path, alert: 'Rezervacija ni uspela.' }
+        format.json { render :show, status: :created, location: @reservation }
+        end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to reservations_path, alert: 'Rezervacija ni uspela, ker sta datuma napačna.' }
+        format.json { render :show, status: :created, location: @reservation }
       end
     end
   end
