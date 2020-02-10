@@ -66,13 +66,13 @@ class ReservationsController < ApplicationController
         end
       else
         respond_to do |format|
-        format.html { redirect_to reservations_path, alert: 'Rezervacija ni uspela.' }
+        format.html { redirect_to request.referer, alert: 'Rezervacija ni uspela, ta datum je že zaseden.' }
         format.json { render :show, status: :created, location: @reservation }
         end
       end
     else
       respond_to do |format|
-        format.html { redirect_to reservations_path, alert: 'Rezervacija ni uspela, ker sta datuma napačna.' }
+        format.html { redirect_to request.referer, alert: 'Rezervacija ni uspela, ker sta datuma napačno zapisana.' }
         format.json { render :show, status: :created, location: @reservation }
       end
     end
@@ -97,7 +97,7 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation.destroy
     respond_to do |format|
-      format.html { redirect_to reservations_url, notice: 'Reservation was successfully destroyed.' }
+      format.html { redirect_to request.referer, notice: 'Rezervacija je bila izbrisana' }
       format.json { head :no_content }
     end
   end
