@@ -16,7 +16,9 @@ test:
   password: password
 production:
   <<: *default
-  database: myapp_production
-  username: myapp
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
-   url: <%= ENV['DATABASE_URL'] %>
+  database: d5kufd7g4no63b
+  username: yfgffdeehgvtqy
+  password: e487a5e109f67b07df3cec3a079931fb1f0c28b301e275c2fa1dcd7662d818b9
+  port: 5432
+  url: postgres://yfgffdeehgvtqy:e487a5e109f67b07df3cec3a079931fb1f0c28b301e275c2fa1dcd7662d818b9@ec2-54-247-96-169.eu-west-1.compute.amazonaws.com:5432/d5kufd7g4no63b
+
