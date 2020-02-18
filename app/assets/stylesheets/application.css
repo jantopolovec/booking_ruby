@@ -16,6 +16,9 @@
  .fb:visited {
     color: #FFC312;
 }
+.fb {
+    color: #FFC312;
+}
 .fb:hover {
     color: white!important;
     text-decoration: none!important;
