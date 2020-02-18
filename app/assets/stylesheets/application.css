@@ -17,7 +17,7 @@
     color: #FFC312;
 }
 .fb {
-    color: #FFC312;
+    color: #FFC312!important;
 }
 .fb:hover {
     color: white!important;
