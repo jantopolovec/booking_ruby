@@ -1,5 +1,6 @@
 class Api::V1::BuildingsController < Api::ApplicationController
   before_action :set_building, only: [:show]
+  skip_before_action :authenticate_request, only: [:index]
     def index
       buildings = Building.all
       building = buildings.map do |building|
