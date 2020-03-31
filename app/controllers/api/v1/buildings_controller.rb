@@ -29,7 +29,7 @@ class Api::V1::BuildingsController < Api::ApplicationController
       if @buiding
           @building.destroy
           render json: { message: 'Uspešno ste izbrisali'}.to_json, status: :ok 
-      else
+      else 
           render json: { error: 'Stavbe ni bilo mogoče izbrisati'}.to_json, status: :error
       end
 
