@@ -7,7 +7,11 @@ class JsonWebToken
       end
       
       def decode(token)
-        secret_key_base = Rails.application.secrets.secret_key_base
+        if Rails.env.production?
+          secret_key_base = ENV['SECRET_KEY_BASE']
+          else
+          secret_key_base = Rails.application.secrets.secret_key_base
+          end
         body = JWT.decode(token, secret_key_base)[0]
         HashWithIndifferentAccess.new body
       rescue
