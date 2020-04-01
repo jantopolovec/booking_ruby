@@ -26,18 +26,16 @@ class Api::V1::BuildingsController < Api::ApplicationController
     end
 
     def destroy
-      if @buiding
+     
           @building.destroy
           render json: { message: 'Uspešno ste izbrisali'}.to_json, status: :ok 
-      else 
-          render json: { error: 'Stavbe ni bilo mogoče izbrisati'}.to_json, status: :error
-      end
+     
 
     end
 
     def update
-      if @building
-        @building.update(building_params)
+     
+      if @building.update(building_params)
         render json: { result: @building }.to_json, status: :ok
       else
          render json: { result: @building.errors}.to_json, status: :unprocessable_entity 
