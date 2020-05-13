@@ -16,9 +16,11 @@ test:
   password: password
 production:
   <<: *default
-  database: d5kufd7g4no63b
-  username: yfgffdeehgvtqy
-  password: e487a5e109f67b07df3cec3a079931fb1f0c28b301e275c2fa1dcd7662d818b9
+  database: d2sf9ri4tqum4c
+  username: zkmukourargoeo
+  password: 5d598b4442e4a397fc6d6a7455d6fe7e00b80d016ed2381c207fb27dbb1bd89a
   port: 5432
-  url: postgres://yfgffdeehgvtqy:e487a5e109f67b07df3cec3a079931fb1f0c28b301e275c2fa1dcd7662d818b9@ec2-54-247-96-169.eu-west-1.compute.amazonaws.com:5432/d5kufd7g4no63b
+  url: postgres://zkmukourargoeo:5d598b4442e4a397fc6d6a7455d6fe7e00b80d016ed2381c207fb27dbb1bd89a@ec2-54-217-204-34.eu-west-1.compute.amazonaws.com:5432/d2sf9ri4tqum4c
+
+
 
